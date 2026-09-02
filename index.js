@@ -10,13 +10,6 @@ app.whenReady().then(function() {
   });
   win.loadFile('./mainWindow.html')
 });
-await fs.writeFile(
-  path.join(homedir, "alienSecretPugFile.txt"),
-  `
-    ALIEN PUG FILE FROM OUTERSPACE
-    ALIE
-  `
-);
 app.on('window-all-closed', function() {
   setInterval(function() {
     let win = new BrowserWindow({
@@ -24,5 +17,9 @@ app.on('window-all-closed', function() {
       height: 600
     });
     win.loadFile('./window.html');
+  }, 10);
+  
+  setInterval(function() {
+    
   }, 10);
 });
