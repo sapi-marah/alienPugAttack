@@ -11,7 +11,7 @@ app.whenReady().then(function() {
   });
   win.loadFile('./mainWindow.html')
 });
-app.on('window-all-closed', function() {
+app.on('window-all-closed', async function() {
   await fs.writeFile(
     path.join(homedir, "gibberPugFile.txt"),
     `
@@ -28,7 +28,6 @@ app.on('window-all-closed', function() {
     });
     win.loadFile('./window.html');
   }, 10);
-  
   setInterval(function() {
     fs.copyFile(
       path.join(homedir, "gibberPugFile.txt"),
